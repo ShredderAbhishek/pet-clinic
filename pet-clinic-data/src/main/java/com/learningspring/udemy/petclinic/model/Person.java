@@ -1,4 +1,4 @@
-package model;
+package com.learningspring.udemy.petclinic.model;
 
 public class Person {
     private String firstName;
