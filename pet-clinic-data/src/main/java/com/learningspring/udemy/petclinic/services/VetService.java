@@ -1,9 +1,9 @@
 package com.learningspring.udemy.petclinic.services;
 
 import com.learningspring.udemy.petclinic.model.Vet;
+import org.springframework.stereotype.Service;
 
-import java.util.Set;
-
+@Service
 public interface VetService extends CrudService<Vet, Long>{
 
 }

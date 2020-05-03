@@ -6,15 +6,19 @@ import com.learningspring.udemy.petclinic.services.OwnerService;
 import com.learningspring.udemy.petclinic.services.VetService;
 import com.learningspring.udemy.petclinic.services.map.OwnerServiceMap;
 import com.learningspring.udemy.petclinic.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataLoader implements CommandLineRunner {
     final private OwnerService ownerService;
     final private VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    @Autowired //optional annotation for Constructor based DI
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
